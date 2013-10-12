@@ -5,9 +5,12 @@ ll.controller("Twilio", ["$scope", "twilio",
         console.log("successfull twilio api hit"); 
     };
 
-    var error = function(XMLHttpRequest, textStatus, errorThrown) { 
+    var error = function(request, textStatus, errorThrown) { 
     	console.log(textStatus);
     	console.log(errorThrown);
+    	console.log(request);
+    	console.log(request.responseText);
+    	console.log(request.status);
     };
 
 	twilioService.message(["07853262719"], "hello world", "e1 0en", success, error);
