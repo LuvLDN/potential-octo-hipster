@@ -51,7 +51,7 @@ ll.controller("Find", ["$scope",
 						else errorMsg += "UNKNOWN_ERROR";
 
 						console.error(errorMsg);
-						vex.dialog.alert(usrMsg);
+						vex.dialog.alert(userMsg);
 					}
 				);
 			}
