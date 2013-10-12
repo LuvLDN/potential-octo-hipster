@@ -3,10 +3,10 @@ layout: base
 
 controller: Twilio
 css: ['home']
-js: ['services/config', 'services/twilio', 'controllers/twiliotest']
+js: ['services/config', 'services/elasticsearch', 'services/users', 'services/twilio', 'controllers/twiliotest']
 ---
 {% raw %}
 <div class="layout-content layout-fixed layout-home" ng-show="view == 'home'">
- <span>{{messageSent}}</span>
+ <span>{{getMessageSent()}}</span>
 </div>
 {% endraw %}
