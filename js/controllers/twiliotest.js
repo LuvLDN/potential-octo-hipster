@@ -1,11 +1,12 @@
-ll.controller("Twilio", ["$scope", "twilio", 
-	function($scope, twilioService) {
+ll.controller("Twilio", ["$scope","safeApply", "twilio", 
+	function($scope, safeApply, twilioService) {
 
 	$scope.messageSent = false;
 
 	var success = function() {  
         console.log("successfull twilio api hit"); 
         $scope.messageSent = "A text receipt will be sent to your phone shortly";
+        safeApply($scope);
     };
 
 
