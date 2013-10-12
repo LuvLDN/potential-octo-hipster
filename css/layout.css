@@ -130,6 +130,10 @@ html, body {
 	float: right;
 }
 
+.page-bar.btn-group .btn {
+	width: 100%;
+}
+
 .page-bar.btn-group.btn-group-two .btn {
 	width: 50%;
 }
