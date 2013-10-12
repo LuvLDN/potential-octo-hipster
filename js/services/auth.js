@@ -40,6 +40,7 @@ ll.factory("auth", ["$rootScope", "cacookie", "users",
 		"logout": function() {
 			cookie.erase("luvldn");
 			currentUser = false;
+			window.location.href = "/";
 		}
 	}
 

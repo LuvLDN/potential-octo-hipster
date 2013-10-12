@@ -23,7 +23,11 @@ js: ['services/config', 'services/elasticsearch', 'services/users', 'controllers
 				<i class="icon-globe content"></i>
 			</div>
 		</div>
-		<div class="page-bar btn-group btn-group-two">
+		<div class="page-bar btn-group btn-group-two" ng-show="current()">
+			<button class="btn btn-default" ng-click="goToHome()"><i class="icon-home"></i> My Home</button>
+			<button class="btn btn-primary" ng-click="startTour('consumer')">Details <i class="icon-chevron-right"></i></button>
+		</div>
+		<div class="page-bar btn-group btn-group-two" ng-hide="current()">
 			<button class="btn btn-default" ng-click="signup()"><i class="icon-user"></i> Sign Up</button>
 			<button class="btn btn-primary" ng-click="startTour('consumer')">Details <i class="icon-chevron-right"></i></button>
 		</div>
@@ -44,7 +48,11 @@ js: ['services/config', 'services/elasticsearch', 'services/users', 'controllers
 				</div>
 			</div>
 		</div>
-		<div class="page-bar btn-group btn-group-two">
+		<div class="page-bar btn-group btn-group-two" ng-show="current()">
+			<button class="btn btn-default" ng-click="goToHome()"><i class="icon-home"></i> My Home</button>
+			<button class="btn btn-primary" ng-click="startTour('merchant')">Details <i class="icon-chevron-right"></i></button>
+		</div>
+		<div class="page-bar btn-group btn-group-two" ng-hide="current()">
 			<button class="btn btn-default" ng-click="signup()"><i class="icon-user"></i> Sign Up</button>
 			<button class="btn btn-primary" ng-click="startTour('merchant')">Details <i class="icon-chevron-right"></i></button>
 		</div>

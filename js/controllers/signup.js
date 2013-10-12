@@ -20,7 +20,11 @@ ll.controller("Signup", ["$scope", "safeApply", "users", "cacookie", "auth",
 							vex.dialog.alert({
 								"message": "Welcome on board! You're signed up and logged in.",
 								"callback": function() {
-									window.location = "/me";
+									if (type == "customer") {
+										window.location.href = "customer.html";
+									} else if (type == "merchant") {
+										window.location.href = "merchant.html";
+									}
 								}
 							});
 						});

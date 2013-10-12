@@ -1,6 +1,8 @@
-ll.controller("HomeTour", ["$scope",
-	function($scope) {
+ll.controller("HomeTour", ["$scope", "auth",
+	function($scope, auth) {
 	
+	$scope.current = auth.current;
+
 	$scope.view = "home";
 	
 	$scope.tours = {
@@ -68,6 +70,22 @@ ll.controller("HomeTour", ["$scope",
 	$scope.signup = function() {
 		$scope.view = "signup";
 		$scope.currentTour = false;
+	}
+
+	// Go to the user's home
+	$scope.goToHome = function() {
+		if (!$scope.current()) {
+			return;
+		}
+
+		switch ($scope.current()._source.type) {
+			case "customer":
+				window.location.href = "/customer.html";
+				break;
+			case "merchant":
+				window.location.href = "/merchant.html";
+				break;
+		}
 	}
 	
 }]);

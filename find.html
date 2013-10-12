@@ -1,0 +1,22 @@
+---
+layout: base
+
+controller: Find
+css: ['home']
+js: ['services/config', 'services/elasticsearch', 'services/users', 'controllers/find']
+---
+
+<div class="layout-content layout-fixed">
+	<div class="layout-content-container full-height" id="map" style="display: none" ng-show="mapLoaded"></div>
+	<div class="layout-content-container full-height" ng-hide="mapLoaded">
+		<div class="center" style="padding-top: 20px">
+			<i class="icon-spin icon-spinner" style="font-size: 100px"></i>
+		</div>
+	</div>
+</div>
+
+<div class="layout-footer page-bar btn-group">
+	<button class="btn btn-default" ng-click="goBack()"><i class="icon-chevron-left" style="float: none !important;"></i> Back</button>
+</div>
+
+<script src="http://js.api.here.com/se/2.5.3/jsl.js" type="text/javascript" charset="utf-8"></script>
