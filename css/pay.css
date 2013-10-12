@@ -1,0 +1,8 @@
+.colour {
+	width: 33%;
+	float: left;
+	height: 100px;
+	line-height: 100px;
+	font-size: 20px;
+	cursor: pointer;
+}

@@ -1,0 +1,30 @@
+---
+layout: base
+
+controller: CustomerPay
+css: ['pay']
+js: ['services/config', 'services/elasticsearch', 'services/users', 'controllers/customerpay']
+---
+
+<div class="layout-content layout-fixed">
+	<div class="layout-content-container full-height">
+		<div class="center" style="padding-top: 20px" ng-show="colLoading">
+			<i class="icon-spin icon-spinner" style="font-size: 100px"></i>
+		</div>
+		<div class="center" ng-hide="colLoading || transaction" style="display: none">
+			<p>Choose the colours in the order given to you:</p>
+			<div class="colour" style="background-color: #000; color: #fff" ng-click="addColour(7)">Black</div>
+			<div class="colour" style="background-color: #f00" ng-click="addColour(0)">Red</div>
+			<div class="colour" style="background-color: #00f; color: #fff" ng-click="addColour(5)">Blue</div>
+			<div class="colour" style="background-color: orange" ng-click="addColour(2)">Orange</div>
+			<div class="colour" style="background-color: #ccc" ng-click="addColour(8)">Grey</div>
+			<div class="colour" style="background-color: #0f0" ng-click="addColour(6)">Green</div>
+			<div class="colour" style="background-color: purple; color: #fff" ng-click="addColour(4)">Purple</div>
+			<div class="colour" style="background-color: yellow" ng-click="addColour(1)">Yellow</div>
+			<div class="colour" style="background-color: pink" ng-click="addColour(3)">Pink</div>
+		</div>
+		<div class="center" ng-show="!colLoading && transaction" style="display: none; padding-top: 20px">
+			<p>You are going to pay {% raw %}<strong>{{transaction._source.payee}}</strong> a value of <strong>{{transaction._source.amount}}</strong>{% endraw %}</p>
+		</div>
+	</div>
+</div>

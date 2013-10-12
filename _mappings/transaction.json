@@ -1,0 +1,26 @@
+{
+	"transaction": {
+		"properties": {
+			"status": {
+				"type": "string",
+				"index": "not_analyzed"
+			},
+			"payer": {
+				"type": "string",
+				"index": "not_analyzed"
+			},
+			"payee": {
+				"type": "string",
+				"index": "not_analyzed"
+			},
+			"amount": {
+				"type": "string",
+				"index": "not_analyzed"
+			},
+			"code": {
+				"type": "string",
+				"index": "not_analyzed"
+			}
+		}
+	}
+}
