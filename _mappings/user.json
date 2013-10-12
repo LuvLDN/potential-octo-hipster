@@ -1,0 +1,18 @@
+{
+	"user": {
+		"properties":  {
+			"name": {
+				"type": "string",
+				"boost": 1.2
+			},
+			"email": {
+				"type": "string",
+				"index": "no"
+			},
+			"type": {
+				"type": "string",
+				"index": "not_analyzed"
+			}
+		}
+	}
+}

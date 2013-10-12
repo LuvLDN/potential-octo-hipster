@@ -1,0 +1,25 @@
+{
+	"outlet": {
+		"properties": {
+			"name": {
+				"type": "string",
+				"boost": 1.2
+			},
+			"address": {
+				"type": "string",
+				"boost": 0.9
+			},
+			"postcode": {
+				"type": "string",
+				"index": "not_analyzed"
+			},
+			"location": {
+				"type": "geo_point"
+			},
+			"owner": {
+				"type": "string",
+				"index": "not_analyzed"
+			}
+		}
+	}
+}
