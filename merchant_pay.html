@@ -1,0 +1,36 @@
+---
+layout: base
+
+controller: MerchantPay
+css: ['home']
+js: ['services/config', 'services/elasticsearch', 'services/users', 'controllers/merchantpay']
+---
+
+<div class="layout-content layout-fixed">
+	<div class="layout-content-container full-height">
+		<div class="center" style="padding-top: 20px;" ng-hide="loading || pendingID" style="display: none">
+			<p>Your customer can be charged through PayPal.</p>
+			<p>Enter the billing amount:</p>
+			<form>
+				<div class="input-group" style="width: 80%; margin: 0 auto">
+					<span class="input-group-addon">£</span>
+					<input type="text" placeholder="0.00" class="form-control" ng-model="amount">
+				</div>
+				<button style="width: 60%; margin: 30px auto 0" class="btn btn-primary btn-large" ng-click="begin()"><i class="icon-money"></i> Begin Transaction</button>
+			</form>
+		</div>
+		<div class="center" style="padding-top: 20px" ng-show="loading">
+			<i class="icon-spin icon-spinner" style="font-size: 100px"></i>
+		</div>
+		<div class="center" ng-show="pendingID && !loading" style="display: none">
+			<p>The user needs to choose these colours, in this order:</p>
+			<div style="width: 50%; margin: 30px auto 0">
+				<ul class="list-unstyled">
+					<li ng-repeat="colour in code.split('')">{% raw %}{{getColour(colour)}}{% endraw %}</li>
+				</ul>
+			</div>
+			<button style="width: 60%; margin: 30px auto 0" class="btn btn-primary btn-large" ng-click="check()"><i class="icon-refresh"></i> Check Status</button>
+			<button style="width: 60%; margin: 30px auto 0" class="btn btn-danger btn-large" ng-click="cancel()"><i class="icon-remove"></i> Cancel Transaction</button>
+		</div>
+	</div>
+</div>
