@@ -17,7 +17,7 @@ ll.directive("auth", [function () {
 			$scope.doLogin = function() {
 				vex.dialog.open({
 					"message": "Log in to LuvLDN",
-					"input": '<input name="username" type="text" placeholder="Username" required />',
+					"input": '<input name="username" type="text" placeholder="Username" required /><input type="password" name="password" placeholder="Password" />',
 					"buttons": [
 						$.extend({}, vex.dialog.buttons.YES, { text: 'Login' }),
 						$.extend({}, vex.dialog.buttons.NO, { text: 'Cancel' })
@@ -25,9 +25,19 @@ ll.directive("auth", [function () {
 					"callback": function(data) {
 						$scope.loading = true;
 						safeApply($scope);
-						auth.login(data.username, function() {
+						auth.login(data.username, function(res) {
 							$scope.loading = false;
 							safeApply($scope);
+							if (!res) {
+								vex.dialog.confirm({
+									"message": "Invalid credentials. Try again?",
+									"callback": function(res) {
+										if (res) {
+											$scope.doLogin();
+										}
+									}
+								});
+							}
 						});
 					}
 				});

@@ -15,6 +15,8 @@ ll.factory("auth", ["$rootScope", "cacookie", "users",
 			// There is a user but no cookie, so log out
 			currentUser = false;
 			$scope.$broadcast("auth");
+		} else {
+			$scope.$broadcast("auth");
 		}
 	}
 	setInterval(checkCookie, 500);
