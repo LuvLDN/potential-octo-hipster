@@ -91,7 +91,7 @@ html, body {
 	height: 100%;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 480px) {
 	.layout-content-container {
 		border: 1px solid #ccc;
 		border-width: 0 1px;
