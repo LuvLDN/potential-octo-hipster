@@ -1,0 +1,46 @@
+.layout-home {
+	margin-bottom: 0;
+	min-height: 600px;
+}
+
+.home-promo {
+	position: relative;
+	height: 50%;
+	overflow: hidden;
+}
+
+.home-promo:last-child {
+	border-bottom-width: 0;
+}
+
+.home-promo .clearfix {
+	height: 100%;
+	padding-bottom: 50px;
+}
+
+.home-promo .clearfix > div {
+	width: 50%;
+	text-align: center;
+	display: table;
+	height: 100%;
+}
+
+.home-promo .clearfix > div > i {
+	font-size: 100px
+}
+
+.home-promo .clearfix .content {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.home-promo .clearfix ul li {
+	padding: 10px;
+}
+
+.home-promo .page-bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: -1px;
+}

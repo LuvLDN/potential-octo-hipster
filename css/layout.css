@@ -1,0 +1,147 @@
+html, body {
+	height: 100%;
+}
+
+/* Background */
+
+.whitebg {
+	background-image: url(../img/background/paper_2.png);
+	background-size: 280px 280px;
+}
+
+.blackbg {
+	color: #e7e7e7;
+	background-image: url(../img/background/black_thread.png);
+	background-size: 49px 28px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+
+	.whitebg {
+		background-image: url(../img/background/paper_2_@2X.png);
+		background-size: 560px 560px;
+	}
+
+    .blackbg {
+        background-image: url(../img/background/black_thread_@2X.png);
+		background-size: 98px 56px;
+    }
+}
+
+/* Heading */
+
+.layout-header {
+	padding: 10px 0;
+	height: 50px;
+	overflow: hidden;
+	position: fixed;
+	top: 0; width: 100%;
+	box-shadow: 0 0px 10px 3px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	border-bottom: 1px solid #ddd;
+}
+
+.layout-header a {
+	color: inherit;
+}
+
+.layout-header a:hover {
+	text-decoration: none;
+}
+
+.layout-header h3 {
+	display: inline-block;
+	margin: 0;
+	font-size: 32px;
+	line-height: 30px;
+}
+
+.layout-header h3 em {
+	font-style: normal;
+	font-family: 'Meie Script', serif;
+	font-size: 40px;
+	margin-right: 8px;
+}
+
+.layout-header h3 strong {
+	color: #b4f;
+}
+
+/* Content */
+
+.layout-content {
+	margin: 50px 0;
+	padding: 10px;
+	width: 100%;
+}
+
+.layout-content.layout-fixed {
+	position: absolute;
+	top: 0; bottom: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.layout-content-container {
+	max-width: 480px;
+	margin: 0 auto;
+}
+
+.layout-content-container.full-height {
+	height: 100%;
+}
+
+@media (min-width: 640px) {
+	.layout-content-container {
+		border: 1px solid #ccc;
+		border-width: 0 1px;
+	}
+}
+
+/* Page width button bar */
+
+.page-bar {
+	height: 50px;
+	width: 100%;
+}
+
+.page-bar.btn-group .btn {
+	height: 100%;
+	border-radius: 0;
+}
+
+.page-bar.btn-group .btn i {
+	line-height: 20px;
+	font-size: 30px;
+}
+.page-bar.btn-group .btn:first-child {
+	border-left-width: 0;
+}
+
+.page-bar.btn-group .btn:first-child i {
+	float: left;
+}
+
+.page-bar.btn-group .btn:last-child {
+	border-right-width: 0;
+}
+
+.page-bar.btn-group .btn:last-child i {
+	float: right;
+}
+
+.page-bar.btn-group.btn-group-two .btn {
+	width: 50%;
+}
+
+.page-bar.btn-group.btn-group-three .btn {
+	width: 33.3333%;
+}
+
+/* Footer */
+
+.layout-footer {
+	position: fixed;
+	bottom: 0;
+	box-shadow: 0 0px 10px 3px rgba(0, 0, 0, 0.2);
+}

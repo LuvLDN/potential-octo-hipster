@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ll">
+<head>
+	<meta charset="utf-8">
+	<title>Title</title>
+	<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Meie+Script" rel="stylesheet" type="text/css">
+	<link href="css/layout.css" rel="stylesheet" type="text/css">
+	<link href="css/home.css" rel="stylesheet" type="text/css">
+	
+</head>
+
+<body ng-controller="HomeTour">
+
+	<div class="layout-header whitebg">
+		<h3><a href="/"><em>Luv</em><strong>LDN</strong></a></h3>
+	</div>
+
+	<!--<div class="layout-content">
+		<button class="btn btn-default">Default</button>
+		<button class="btn btn-primary">Primary</button>
+		<button class="btn btn-success">Success</button>
+		<button class="btn btn-info">Info</button>
+		<button class="btn btn-warning">Warning</button>
+		<button class="btn btn-danger">Danger</button>
+		<div class="alert">Alert</div>
+		<div class="alert alert-success">Alert</div>
+		<div class="alert alert-danger">Alert</div>
+		<div class="alert alert-info">Alert</div>
+		<div class="alert alert-warning">Alert</div>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+	</div>-->
+	
+	
+	<!--<div class="layout-content layout-fixed">
+		<code>Herp derp</code>
+		<button class="btn">Default</button>
+		<button class="btn btn-primary">Primary</button>
+		<button class="btn btn-success">Success</button>
+		<button class="btn btn-info">Info</button>
+		<button class="btn btn-warning">Warning</button>
+		<button class="btn btn-danger">Danger</button>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+		<p>Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp Herp</p>
+	</div>-->
+	
+	<div class="layout-content layout-fixed layout-home" ng-show="view == 'home'">
+		<div class="home-promo layout-content-container">
+			<div class="clearfix">
+				<div class="pull-left">
+					<div class="content">
+						<strong>Londoner?</strong>
+						<ul class="list-unstyled">
+							<li>Find new places</li>
+							<li>Pay how you like</li>
+							<li>Support your area</li>
+						</ul>
+					</div>
+				</div>
+				<div class="pull-right">
+					<i class="icon-globe content"></i>
+				</div>
+			</div>
+			<div class="page-bar btn-group btn-group-two">
+				<button class="btn btn-default"><i class="icon-user"></i> Sign Up</button>
+				<button class="btn btn-primary" ng-click="startTour('consumer')">Details <i class="icon-chevron-right"></i></button>
+			</div>
+		</div>
+		<div class="home-promo layout-content-container">
+			<div class="clearfix">
+				<div class="pull-left">
+					<i class="icon-gbp content"></i>
+				</div>
+				<div class="pull-right">
+					<div class="content">
+						<strong>Local retailer?</strong>
+						<ul class="list-unstyled">
+							<li>Collect payments more easily</li>
+							<li>Find more customers</li>
+							<li>Grow your business</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="page-bar btn-group btn-group-two">
+				<button class="btn btn-default"><i class="icon-user"></i> Sign Up</button>
+				<button class="btn btn-primary" ng-click="startTour('merchant')">Details <i class="icon-chevron-right"></i></button>
+			</div>
+		</div>
+	</div>
+	
+	<!--<div class="layout-footer whitebg">
+		Wasd
+	</div>-->
+	
+	<!--<div class="layout-footer page-bar btn-group btn-group-two">
+		<button class="btn btn-default"><i class="icon-chevron-left"></i> Back</button>
+		<button class="btn btn-primary">Done <i class="icon-ok"></i></button>
+	</div>-->
+	
+	<div class="layout-content layout-fixed" style="display: none" ng-show="view == 'con1'">
+		<div class="layout-content-container full-height">
+			Herp derp
+		</div>
+	</div>
+	
+	<!-- Footer for tours -->
+	<div class="layout-footer page-bar btn-group btn-group-three" style="display: none" ng-show="view != 'home'">
+		<button class="btn btn-default"><i class="icon-chevron-left"></i> Back</button>
+		<button class="btn btn-primary"><i class="icon-user"></i> Sign Up</button>
+		<button class="btn btn-default">Next <i class="icon-chevron-right"></i></button>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js" type="text/javascript"></script>
+	<script src="js/ll.js" type="text/javascript"></script>
+	<script src="js/controllers/hometour.js" type="text/javascript"></script>
+</body>
+</html>
