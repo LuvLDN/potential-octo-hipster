@@ -13,7 +13,7 @@ ll.controller("Find", ["$scope",
 			new nokia.maps.map.component.InfoBubbles()
 		],
 		zoomLevel: 10,
-		center: [52.51, 13.4]
+		center: [51.5072, 0.1275]
 	});
 
 	$scope.map.addListener("displayready", function() {
@@ -38,7 +38,7 @@ ll.controller("Find", ["$scope",
 					},
 					// Handle errors (display message):
 					function (error) {
-						var userMsg = "We couldn't find you :-(";
+						var userMsg = "We couldn't find you :-( Please reload";
 						var errorMsg = "";
 
 						// Determine what caused the error and show error message:
