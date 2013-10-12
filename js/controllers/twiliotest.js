@@ -5,7 +5,7 @@ ll.controller("Twilio", ["$scope", "twilio",
 
 	var success = function() {  
         console.log("successfull twilio api hit"); 
-        messageSent = "A text receipt will be sent to your phone shortly";
+        $scope.messageSent = "A text receipt will be sent to your phone shortly";
     };
 
 
