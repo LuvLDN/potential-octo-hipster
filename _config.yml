@@ -1,0 +1,2 @@
+js: ['bootstrap.min', 'lib/vex/vex.combined.min', 'lib/cookie/cookie', 'lib/cookie/cookie-ng', 'll', 'services/safeApply', 'services/auth', 'directives/auth']
+css: ['lib/vex/vex', 'lib/vex/vex-theme-wireframe']

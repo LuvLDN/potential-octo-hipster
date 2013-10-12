@@ -2,16 +2,18 @@
 <html lang="en" ng-app="ll">
 <head>
 	<meta charset="utf-8">
-	<title>Title</title>
+	<title>LuvLDN</title>
 	<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta name="description" content="LuvLDN">
+	<meta name="author" content="LuvLDN">
 
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Meie+Script" rel="stylesheet" type="text/css">
 	<link href="css/layout.css" rel="stylesheet" type="text/css">
 	{% for css in page.css %}<link href="css/{{css}}.css" rel="stylesheet" type="text/css">
+	{% endfor %}
+	#{% for css in site.css %}<link href="css/{{css}}.css" rel="stylesheet" type="text/css">
 	{% endfor %}
 	{% for js in page.headjs %}<script src="js/{{js}}.js" type="text/javascript"></script>
 	{% endfor %}
@@ -22,14 +24,15 @@
 
 	<div class="layout-header whitebg">
 		<h3><a href="/"><em>Luv</em><strong>LDN</strong></a></h3>
+		<auth class="pull-right"></auth>
 	</div>
 
 {{ content }}
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js" type="text/javascript"></script>
-	<script src="js/ll.js" type="text/javascript"></script>
+	{% for js in site.js %}<script src="js/{{js}}.js" type="text/javascript"></script>
+	{% endfor %}
 	{% for js in page.js %}<script src="js/{{js}}.js"></script>
 	{% endfor %}
 </body>
