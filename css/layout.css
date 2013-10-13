@@ -70,9 +70,9 @@ html, body {
 /* Content */
 
 .layout-content {
-	margin: 50px 0;
 	padding: 10px;
 	width: 100%;
+	margin: 50px 0;
 }
 
 .layout-content.layout-fixed {
@@ -80,6 +80,7 @@ html, body {
 	top: 0; bottom: 0;
 	padding: 0;
 	overflow: hidden;
+	margin-top: 0;
 }
 
 .layout-content-container {
