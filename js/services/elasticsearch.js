@@ -77,7 +77,7 @@ ll.factory("elasticsearch", ["config",
 										"distance": "10km", 
 										"location": {
 											"lat":lat,
-											"lng":lng
+											"lon":lng
 										}
 									}
 								}
