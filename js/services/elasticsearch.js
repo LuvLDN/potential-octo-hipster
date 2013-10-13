@@ -60,6 +60,11 @@ ll.factory("elasticsearch", ["config",
 				"getAll": function() {
 					return doAjax("GET", "/" + type + "/_search");
 				},
+				"patch": function(id, key, value) {
+					return doAjax("POST", "/" + type + "/" + id + "/_update", {
+						"script": 'ctx._source.' + key + ' = "' + value + '"'
+					});
+				},
 				"geoDistance": function(property,lat,lng) {
 					return doAjax("POST", "/" + type + "/_search", {
 						"filtered": {

@@ -2,7 +2,7 @@
 layout: base
 
 controller: MerchantPay
-css: ['home']
+css: ['pay']
 js: ['services/config', 'services/elasticsearch', 'services/users', 'controllers/merchantpay']
 ---
 
@@ -24,12 +24,21 @@ js: ['services/config', 'services/elasticsearch', 'services/users', 'controllers
 		</div>
 		<div class="center" ng-show="pendingID && !loading" style="display: none">
 			<p>The user needs to choose these colours, in this order:</p>
-			<div style="width: 50%; margin: 30px auto 0">
-				<ul class="list-unstyled">
-					<li ng-repeat="colour in code.split('')">{% raw %}{{getColour(colour)}}{% endraw %}</li>
-				</ul>
+			<div ng-repeat="colour in code.split('')" class="merchantpay">
+				<div class="colour" style="background-color: #000; color: #fff" ng-show="colour == 7">Black</div>
+				<div class="colour" style="background-color: #f00" ng-show="colour == 0">Red</div>
+				<div class="colour" style="background-color: #00f; color: #fff" ng-show="colour == 5">Blue</div>
+				<div class="colour" style="background-color: orange" ng-show="colour == 2">Orange</div>
+				<div class="colour" style="background-color: #ccc" ng-show="colour == 8">Grey</div>
+				<div class="colour" style="background-color: #0f0" ng-show="colour == 6">Green</div>
+				<div class="colour" style="background-color: purple; color: #fff" ng-show="colour == 4">Purple</div>
+				<div class="colour" style="background-color: yellow" ng-show="colour == 1">Yellow</div>
+				<div class="colour" style="background-color: pink" ng-show="colour == 3">Pink</div>
 			</div>
-			<button style="width: 60%; margin: 30px auto 0" class="btn btn-primary btn-large" ng-click="check()"><i class="icon-refresh"></i> Check Status</button>
+			<p ng-show="transaction._source.payer">Paying for this bill: {% raw %}{{transaction._source.payer}}{% endraw %}</p>
+			<p ng-show="transaction._source.status == 'ACQUIRED'">Payee is processing the transaction</p>
+			<p ng-show="transaction._source.status == 'SUCCESS'">Payment completed!</p>
+			<p ng-show="transaction._source.status == 'FAILED'">Payment failed!</p>
 			<button style="width: 60%; margin: 30px auto 0" class="btn btn-danger btn-large" ng-click="cancel()"><i class="icon-remove"></i> Cancel Transaction</button>
 		</div>
 	</div>

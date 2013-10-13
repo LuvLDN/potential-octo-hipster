@@ -25,6 +25,7 @@ js: ['services/config', 'services/elasticsearch', 'services/users', 'controllers
 		</div>
 		<div class="center" ng-show="!colLoading && transaction" style="display: none; padding-top: 20px">
 			<p>You are going to pay {% raw %}<strong>{{transaction._source.payee}}</strong> a value of <strong>{{transaction._source.amount}}</strong>{% endraw %}</p>
+			<button class="btn btn-primary btn-large" style="margin: 30px auto 0" ng-click="pay()"><i class="icon-money"></i> Pay with PayPal</button>
 		</div>
 	</div>
 </div>
