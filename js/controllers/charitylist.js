@@ -3,7 +3,7 @@ ll.controller("CharityList", ["$scope", "safeApply", "elasticsearch", "auth",
 
 		$scope.charityList = [];
 
-		es.type("charitydatatest").getAll()
+		es.type("charity").getAll()
 			.done(function(d) {
 				var data = d.hits.hits;
 				data.map(function(obj) { $scope.charityList.push(obj['_source']) });
