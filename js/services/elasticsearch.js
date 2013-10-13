@@ -57,6 +57,9 @@ ll.factory("elasticsearch", ["config",
 				"delete": function(id) {
 					return doAjax("DELETE", "/" + type + "/" + id);
 				},
+				"getAll": function() {
+					return doAjax("GET", "/" + type + "/_search");
+				},
 				"patch": function(id, key, value) {
 					return doAjax("POST", "/" + type + "/" + id + "/_update", {
 						"script": 'ctx._source.' + key + ' = "' + value + '"'

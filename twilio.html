@@ -1,0 +1,12 @@
+---
+layout: base
+
+controller: TwilioTest
+css: ['home']
+js: ['services/config', 'services/elasticsearch', 'services/users', 'services/twilio', 'controllers/twiliotest']
+---
+{% raw %}
+<div class="layout-content layout-fixed layout-home">
+ <span>{{messageSent}}</span>
+</div>
+{% endraw %}
