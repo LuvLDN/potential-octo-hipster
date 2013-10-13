@@ -2,17 +2,17 @@
 layout: base
 
 controller: CharityList
-css: ['home']
+css: ['charity']
 js: ['services/config', 'services/elasticsearch', 'services/users', 'controllers/charitylist']
 ---
+
 {% raw %}
-<div class="layout-content layout-fixed">
+<div class="layout-content" style="margin-top: 30px">
 	<div class="layout-content-container full-height">
-		<div class="center" ng-repeat="charity in charityList">
-			<p>{{charity.name}}</p>
+		<div class="center charity" ng-repeat="charity in charityList">
+			<p><strong>{{charity.name}}</strong></p>
 			<p>{{charity.description}}</p>
-			<p>{{charity.link}}</p>
-			<div><button class="btn btn-primary btn-large">Donate</button></div>
+			<div><a href="{{charity.link}}" target="_blank" class="btn btn-primary btn-large">Donate</a></div>
 		</div>
 	</div>
 </div>
