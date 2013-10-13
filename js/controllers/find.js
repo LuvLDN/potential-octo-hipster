@@ -22,7 +22,7 @@ ll.controller("Find", ["$scope", "elasticsearch", "safeApply",
 	$scope.outlets = [];
 
 	$scope.getLocal = function(lat,lng) {
-		es.type("datatest").geoDistance(lat,lng)
+		es.type("outlet").geoDistance(lat,lng)
 			.done(function(d) {
 				var data = d.hits.hits;
 				data.map(function(obj) { $scope.outlets.push(obj['_source']) });
