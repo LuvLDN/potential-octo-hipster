@@ -13,7 +13,7 @@ ll.factory("twilio", ["$rootScope",
 						type:"POST", 
 						
 						data: {
-							"to":number, "from":"+15005555006", "message": message
+							"to":number, "message": message
 						},
 						success: successCallback,
 		                error: errorCallback
