@@ -23,6 +23,7 @@ js: ['services/config', 'services/elasticsearch', 'services/users', 'controllers
 			<i class="icon-spin icon-spinner" style="font-size: 100px"></i>
 		</div>
 		<div class="center" ng-show="pendingID && !loading" style="display: none">
+			<h3>Merchant Payment</h3>
 			<p>The user needs to choose these colours, in this order:</p>
 			<div ng-repeat="colour in code.split('')" class="merchantpay">
 				<div class="colour" style="background-color: #000; color: #fff" ng-show="colour == 7">Black</div>
