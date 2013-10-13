@@ -67,16 +67,18 @@ ll.factory("elasticsearch", ["config",
 				},
 				"geoDistance": function(property,lat,lng) {
 					return doAjax("POST", "/" + type + "/_search", {
-						"filtered": {
-							"query": {
-								"match_all": {}
-							},
-							"filter": {
-								"geo_distance":{
-									"distance": "10km", 
-									property: {
-										"lat":lat,
-										"lng":lng
+						"query":{
+							"filtered": {
+								"query": {
+									"match_all": {}
+								},
+								"filter": {
+									"geo_distance":{
+										"distance": "10km", 
+										property: {
+											"lat":lat,
+											"lng":lng
+										}
 									}
 								}
 							}
