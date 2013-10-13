@@ -65,7 +65,7 @@ ll.factory("elasticsearch", ["config",
 						"script": 'ctx._source.' + key + ' = "' + value + '"'
 					});
 				},
-				"geoDistance": function(property,lat,lng) {
+				"geoDistance": function(lat,lng) {
 					return doAjax("POST", "/" + type + "/_search", {
 						"query":{
 							"filtered": {
@@ -75,7 +75,7 @@ ll.factory("elasticsearch", ["config",
 								"filter": {
 									"geo_distance":{
 										"distance": "10km", 
-										property: {
+										"location": {
 											"lat":lat,
 											"lng":lng
 										}
