@@ -1,5 +1,5 @@
-ll.controller("Find", ["$scope",
-	function($scope) {
+ll.controller("Find", ["$scope", "elasticsearch", "safeApply",
+	function($scope, es, safeApply) {
 
 	// Whether the map has loaded or not
 	$scope.mapLoaded = false;
@@ -19,6 +19,21 @@ ll.controller("Find", ["$scope",
 	$scope.map.addListener("displayready", function() {
 		$scope.mapLoaded = true;
 	});
+	$scope.outlets = [];
+
+	$scope.getLocal = function(lat,lng) {
+		es.type("datatest").geoDistance("location",lat,lng)
+			.done(function(d) {
+				var data = d.hits.hits;
+				data.map(function(obj) { $scope.outlets.push(obj['_source']) });
+				console.log($scope.outlets);
+				safeApply($scope);
+				
+			}).fail(function() {
+				console.log("cannot get items from index");
+				safeApply($scope);
+			})
+	}
 
 	$scope.$watch("mapLoaded", function(nV) {
 		if (!nV) { return; }
@@ -35,6 +50,8 @@ ll.controller("Find", ["$scope",
 							new nokia.maps.map.Circle(coords, coords.accuracy);
 						$scope.map.objects.addAll([accuracyCircle, marker]);
 						$scope.map.zoomTo(accuracyCircle.getBoundingBox(), false, "default");
+						console.log(coords);
+						$scope.getLocal(coords.latitude,coords.longitude);
 					},
 					// Handle errors (display message):
 					function (error) {

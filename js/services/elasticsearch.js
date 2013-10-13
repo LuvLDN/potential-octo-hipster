@@ -64,6 +64,24 @@ ll.factory("elasticsearch", ["config",
 					return doAjax("POST", "/" + type + "/" + id + "/_update", {
 						"script": 'ctx._source.' + key + ' = "' + value + '"'
 					});
+				},
+				"geoDistance": function(property,lat,lng) {
+					return doAjax("POST", "/" + type + "/_search", {
+						"filtered": {
+							"query": {
+								"match_all": {}
+							},
+							"filter": {
+								"geo_distance":{
+									"distance": "10km", 
+									property: {
+										"lat":lat,
+										"lng":lng
+									}
+								}
+							}
+						}
+					});
 				}
 			}
 		}
