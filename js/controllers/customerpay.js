@@ -27,8 +27,16 @@ ll.controller("CustomerPay", ["$scope", "safeApply", "elasticsearch", "auth",
 				} else {
 					// Found the transaction
 					$scope.transaction = data[0];
-					$scope.colLoading = false;
 					safeApply($scope);
+					es.type("transaction").patch($scope.transaction._id, "payer", auth.current()._source.email)
+					.done(function(data) {
+						$scope.colLoading = false;
+						safeApply($scope);	
+					}).fail(function() {
+						vex.dialog.alert("Unable to own the transaction. Cryptic error message concludes.");
+						$scope.colLoading = false;
+						safeApply($scope);
+					});
 				}
 			}).fail(function() {
 				vex.dialog.alert("Unable to find a matching transaction. Please try again");
@@ -39,5 +47,15 @@ ll.controller("CustomerPay", ["$scope", "safeApply", "elasticsearch", "auth",
 			})
 		}
 	});
+
+	$scope.pay = function() {
+		$scope.colLoading = true;
+		es.type("transaction").patch($scope.transaction._id, "status", "ACQUIRED")
+		.done(function() {
+			window.location.href = "http://luvldn.com/~dyn/paypal.php?userEmail=" + encodeURIComponent(auth.current()._source.email) + "&productName=" + encodeURIComponent("Payment to " + $scope.transaction._source.payee) + "&productPrice=" + encodeURIComponent($scope.transaction._source.amount);
+		}).fail(function() {
+			vex.dialog.alert("Unable to acquire the transaction. This means bad things.");
+		});
+	}
 
 }]);

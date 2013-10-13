@@ -29,6 +29,7 @@ js: ['services/config', 'services/elasticsearch', 'services/users', 'controllers
 					<li ng-repeat="colour in code.split('')">{% raw %}{{getColour(colour)}}{% endraw %}</li>
 				</ul>
 			</div>
+			<p ng-show="transaction.payer">Paying for this bill: {{transaction.payer}}</p>
 			<button style="width: 60%; margin: 30px auto 0" class="btn btn-primary btn-large" ng-click="check()"><i class="icon-refresh"></i> Check Status</button>
 			<button style="width: 60%; margin: 30px auto 0" class="btn btn-danger btn-large" ng-click="cancel()"><i class="icon-remove"></i> Cancel Transaction</button>
 		</div>
