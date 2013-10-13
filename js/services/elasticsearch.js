@@ -73,7 +73,7 @@ ll.factory("elasticsearch", ["config",
 							},
 							"filter": {
 								"geo_distance":{
-									"distance": "20km", 
+									"distance": "10km", 
 									property: {
 										"lat":lat,
 										"lng":lng
