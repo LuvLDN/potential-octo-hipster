@@ -27,7 +27,7 @@ ll.controller("Find", ["$scope", "elasticsearch", "safeApply",
 				var data = d.hits.hits;
 				data.map(function(obj) { $scope.outlets.push(obj['_source']) });
 				$scope.outlets.map(function(outlet) {
-					var marker = new nokia.maps.map.StandardMarker([outlet.location.lat, outlet.location.lng], {
+					var marker = new nokia.maps.map.StandardMarker([outlet.location.lat, outlet.location.lon], {
 						text: outlet.name,
 						draggable: false
 					});
