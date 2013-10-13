@@ -1,6 +1,8 @@
 ll.controller("MerchantPay", ["$scope", "safeApply", "elasticsearch", "auth",
 	function($scope, safeApply, es, auth) {
 
+	$scope.amount = "19.99";
+
 	$scope.loading = false;
 
 	$scope.pendingID = false;
@@ -110,5 +112,7 @@ ll.controller("MerchantPay", ["$scope", "safeApply", "elasticsearch", "auth",
 			safeApply($scope);
 		});
 	}
+
+	setInterval($scope.check, 1000);
 
 }]);
