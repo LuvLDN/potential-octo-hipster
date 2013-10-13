@@ -22,15 +22,21 @@ ll.controller("Find", ["$scope", "elasticsearch", "safeApply",
 	$scope.outlets = [];
 
 	$scope.getLocal = function(lat,lng) {
-		es.type("datatest").geoDistance("location",lat,lng)
+		es.type("datatest").geoDistance(lat,lng)
 			.done(function(d) {
 				var data = d.hits.hits;
 				data.map(function(obj) { $scope.outlets.push(obj['_source']) });
-				console.log($scope.outlets);
+				$scope.outlets.map(function(outlet) {
+					var marker = new nokia.maps.map.StandardMarker([outlet.location.lat, outlet.location.lng], {
+						text: outlet.name,
+						draggable: false
+					});
+
+					$scope.map.objects.add(marker);
+				});
 				safeApply($scope);
-				
 			}).fail(function() {
-				console.log("cannot get items from index");
+				vex.dialog.alert("Unable to get data from search, maybe the server has barfed again?");
 				safeApply($scope);
 			})
 	}
@@ -50,7 +56,6 @@ ll.controller("Find", ["$scope", "elasticsearch", "safeApply",
 							new nokia.maps.map.Circle(coords, coords.accuracy);
 						$scope.map.objects.addAll([accuracyCircle, marker]);
 						$scope.map.zoomTo(accuracyCircle.getBoundingBox(), false, "default");
-						console.log(coords);
 						$scope.getLocal(coords.latitude,coords.longitude);
 					},
 					// Handle errors (display message):
