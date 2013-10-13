@@ -18,11 +18,12 @@ ll.factory("users", ["elasticsearch",
 				cb(false);
 			});
 		},
-		"create": function(username, email, type, cb) {
+		"create": function(username, email, phone, type, cb) {
 			es.type("user").create({
-				"name": "chris",
-				"email": "chris.alexander@luvldn.com",
-				"type": "customer"
+				"name": username,
+				"email": email,
+				"type": type,
+				"phone": phone
 			}).done(function(data) {
 				cb(data._id);
 			}).fail(function() {

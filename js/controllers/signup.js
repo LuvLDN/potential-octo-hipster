@@ -10,7 +10,7 @@ ll.controller("Signup", ["$scope", "safeApply", "users", "cacookie", "auth",
 		$scope.loading = true;
 		users.getByUsername($scope.username, function(data) {
 			if (!data.length) {
-				users.create($scope.username, $scope.email, type, function(id) {
+				users.create($scope.username, $scope.email, $scope.phone, type, function(id) {
 					if (id) {
 						// Succeeded in creating the user so sign them in
 						auth.login($scope.username, function() {
