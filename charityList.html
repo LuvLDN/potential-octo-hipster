@@ -12,6 +12,7 @@ js: ['services/config', 'services/elasticsearch', 'services/users', 'controllers
 		<div class="center charity" ng-repeat="charity in charityList">
 			<p><strong>{{charity.name}}</strong></p>
 			<p>{{charity.description}}</p>
+			<img ng-src="{{charity.image}}" style="max-height: 100px" />
 			<div><a href="{{charity.link}}" target="_blank" class="btn btn-primary btn-large">Donate</a></div>
 		</div>
 	</div>
