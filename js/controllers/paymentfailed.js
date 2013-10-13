@@ -1,4 +1,4 @@
-ll.controller("TwilioTest", ["$scope","safeApply", "twilio", 
+ll.controller("PaymentSuccess", ["$scope","safeApply", "twilio", 
 	function($scope, safeApply, twilioService) {
 
 	$scope.messageSent = false;
@@ -19,6 +19,7 @@ ll.controller("TwilioTest", ["$scope","safeApply", "twilio",
     	console.log(request.status);
     };
 
-	twilioService.message(["07853262719"], "hello world", "e1 0en", success, error);
+    
+	twilioService.message(["07853262719"], "Your payment has failed", "e1 0en", success, error);
 
 }]);

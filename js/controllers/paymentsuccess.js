@@ -1,4 +1,4 @@
-ll.controller("TwilioTest", ["$scope","safeApply", "twilio", 
+ll.controller("PaymentSuccess", ["$scope","safeApply", "twilio", 
 	function($scope, safeApply, twilioService) {
 
 	$scope.messageSent = false;
