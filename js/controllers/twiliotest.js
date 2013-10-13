@@ -19,6 +19,6 @@ ll.controller("TwilioTest", ["$scope","safeApply", "twilio",
     	console.log(request.status);
     };
 
-	twilioService.message(["07853262719"], "hello world", "e1 0en", success, error);
+	twilioService.message(["07853262719"], "test text message", "e1 0en", success, error);
 
 }]);
