@@ -1,12 +1,10 @@
-ll.controller("PaymentSuccess", ["$scope","safeApply", "twilio", 
+ll.controller("PaymentFailed", ["$scope","safeApply", "twilio", 
 	function($scope, safeApply, twilioService) {
 
 	$scope.messageSent = false;
 
 	var success = function() {  
         console.log("successfull twilio api hit"); 
-        $scope.messageSent = "A text receipt will be sent to your phone shortly";
-        safeApply($scope);
     };
 
 
@@ -19,7 +17,6 @@ ll.controller("PaymentSuccess", ["$scope","safeApply", "twilio",
     	console.log(request.status);
     };
 
-    
-	twilioService.message(["07853262719"], "Your payment has failed", "e1 0en", success, error);
+	twilioService.message(["+447530606033"], "Payment Failed", "e1 0en", success, error);
 
 }]);
